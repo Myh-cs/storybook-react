@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 import Task from './Task';
+import markdownNotes from './test.md';
 
 const stories = storiesOf('Storybook Knobs', module);
 
@@ -25,8 +26,8 @@ stories
   .add('default', () => {
     const task1 = object("task", task, "PropsType")
     return <Task task={task1} {...actions} />
-  })
-  .add('pinned', () =>{
+  }, { notes: { markdown: markdownNotes } })
+  .add('pinned', () => {
     const task2 = object("task", { ...task, state: 'TASK_PINNED' }, "PropsType")
     return <Task task={task2} {...actions} />
   })

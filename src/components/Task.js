@@ -29,11 +29,19 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
 }
 
 Task.propTypes = {
+  /**
+   * this is task Object
+   * {
+   *   id: string
+   *   title: string
+   *   state: enum['TASK_ARCHIVED','TASK_INBOX']
+   * }
+   */
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
   onArchiveTask: PropTypes.func,
   onPinTask: PropTypes.func,
 };

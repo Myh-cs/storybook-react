@@ -1,6 +1,10 @@
-import { configure } from '@storybook/react';
+import { configure,addDecorator } from '@storybook/react';
 import requireContext from 'require-context.macro';
+import { withInfo } from '@storybook/addon-info';
 import 'storybook-chromatic';
+
+addDecorator(withInfo); 
+
 
 import '../src/index.css';
 
